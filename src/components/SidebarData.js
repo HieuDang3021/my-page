@@ -26,13 +26,22 @@ export const SidebarData = {
             link: "/about"
         },
     ],
-    contactme: {
-        title:"Contact me",
-        linkedinIcon: <LinkedInIcon/>,
-        linkedinLink: "",
-        facebookIcon: <FacebookIcon/>,
-        facebookLink: "",
-        githubIcon : <GitHubIcon/>,
-        githubLink: ""
-    },
+    contactme:
+    [
+        {
+            title:"Linkedin",
+            icon: <LinkedInIcon/>,
+            link: "https://www.linkedin.com/in/trung-hieu-dang-b2bb35251/",
+        },
+        {
+            title:"Facebook",
+            icon: <FacebookIcon/>,
+            link: "https://www.facebook.com/profile.php?id=100010932875992",
+        },
+        {
+            title:"Github",
+            icon : <GitHubIcon/>,
+            link: "https://github.com/HieuDang3021"
+        },
+    ]
 }

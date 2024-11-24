@@ -6,11 +6,11 @@ import potrait from "../assets/images/potrait-image-example.jpg"
 function Navbar() {
   return (
     <div className='Sidebar'>
-      {/* add image from image folder*/}
-      <img className='potrait' src={potrait} alt="Potrait" />
-      {/* add title */}
-      <p className="SidebarText">Hieu Trung Dang</p>
-      <p className="SidebarText">Full-stack developer</p>
+      <div href="/">
+        <img className='potrait' src={potrait} alt="Potrait" />
+        <p className="SidebarText">Hieu Trung Dang</p>
+        <p className="SidebarText">Full-stack developer</p>
+      </div>
       <ul className='SidebarList'>
           {SidebarData.pagelink.map((val, key) => {
               return (
@@ -29,17 +29,15 @@ function Navbar() {
       <div className="contact-container">
         <p>Contact me</p>
           <div className="contact-icons">
-            <a href={SidebarData.contactme.linkedinLink} target="_blank" rel="noopener noreferrer">
-              {SidebarData.contactme.linkedinIcon}
-            </a>
-            <a href={SidebarData.contactme.facebookLink} target="_blank" rel="noopener noreferrer">
-              {SidebarData.contactme.facebookIcon}
-            </a>
-            <a href={SidebarData.contactme.githubLink} target="_blank" rel="noopener noreferrer">
-              {SidebarData.contactme.githubIcon}
-            </a>
+          {SidebarData.contactme.map((val, key) => {
+              return (
+                  <a key={key} href={val.link} target="blank" rel="noopener noreferrer" alt={val.title} >
+                  {val.icon}
+                  </a>
+              );
+          })}
           </div>
-        </div>
+      </div>
     </div>
   )
 }
