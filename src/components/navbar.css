@@ -1,3 +1,4 @@
+/* Side bar for pc monitor */
 .Sidebar {
     position: fixed; 
     top: 0;
@@ -110,3 +111,71 @@
   .contact-icons a:hover {
     color: #58A4B0; /* Change color on hover */
   }
+
+/* Top Bar for Mobile */
+.TopBar {
+  display: none; /* Hide on desktop by default */
+  background-color: #373F51;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.TopBar .MenuButton {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.TopBar .potrait {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.TopBar .SidebarText {
+  margin: 0 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Dropdown Menu */
+.DropdownMenu {
+  display: none; /* Hide menu initially */
+  flex-direction: column;
+  background-color: #373F51;
+  position: absolute;
+  top: 60px;
+  width: 100%;
+  padding: 0;
+}
+
+.DropdownMenu.show {
+  display: flex;
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+  .Sidebar {
+    display: none; /* Hide sidebar */
+  }
+
+  .TopBar {
+    display: flex; /* Show top bar */
+  }
+}
+
+/* Sidebar Styles for Larger Screens */
+@media (min-width: 769px) {
+  .TopBar {
+    display: none !important; /* Forcefully hide TopBar on larger screens */
+  }
+
+  .Sidebar {
+    display: flex; /* Ensure Sidebar is visible on larger screens */
+  }
+}
