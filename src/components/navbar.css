@@ -21,6 +21,10 @@
     border-radius: 100px;
 }
 
+.MenuButton {
+  display: none;
+}
+
 .SidebarText {
     color: #fff; /* Matches sidebar theme */
     text-align: center; /* Centers the text */
@@ -120,6 +124,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: column;
   padding: 10px;
 }
 
@@ -161,21 +166,24 @@
 /* Media Query for Mobile */
 @media (max-width: 768px) {
   .Sidebar {
-    display: none; /* Hide sidebar */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    height: auto;
+    width: 100%;
+    display: flex;
+    background-color: #373F51;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 10px;
   }
 
-  .TopBar {
-    display: flex; /* Show top bar */
-  }
-}
-
-/* Sidebar Styles for Larger Screens */
-@media (min-width: 769px) {
-  .TopBar {
-    display: none !important; /* Forcefully hide TopBar on larger screens */
+  .MenuButton {
+    display: block;
+    cursor: pointer;
   }
 
-  .Sidebar {
-    display: flex; /* Ensure Sidebar is visible on larger screens */
-  }
 }
