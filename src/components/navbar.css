@@ -1,3 +1,8 @@
+.navbar {
+  display: flex;
+  flex-direction: column;
+}
+
 /* Side bar for pc monitor */
 .Sidebar {
     position: fixed; 
@@ -9,12 +14,12 @@
     background-color: #373F51;
     border-radius: 0 10px 10px 0;
 
-  display: flex;
-  flex-direction: column; /* Stack items vertically */
+    display: flex;
+    flex-direction: column; /*Stack items vertically*/
 }
 
 .potrait {
-    width: 150px; /* Set the desired width */
+    width: 50%; /* Set the desired width */
     height: auto; /* Maintain aspect ratio */
     margin: 10px auto; /* Center the logo if needed */
     display: block; /* Ensures the logo is treated as a block element */
@@ -116,55 +121,11 @@
     color: #58A4B0; /* Change color on hover */
   }
 
-/* Top Bar for Mobile */
-.TopBar {
-  display: none; /* Hide on desktop by default */
-  background-color: #373F51;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: column;
-  padding: 10px;
-}
-
-.TopBar .MenuButton {
-  background: none;
-  border: none;
-  font-size: 24px;
-  color: #fff;
-  cursor: pointer;
-}
-
-.TopBar .potrait {
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-}
-
-.TopBar .SidebarText {
-  margin: 0 10px;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-/* Dropdown Menu */
-.DropdownMenu {
-  display: none; /* Hide menu initially */
-  flex-direction: column;
-  background-color: #373F51;
-  position: absolute;
-  top: 60px;
-  width: 100%;
-  padding: 0;
-}
-
-.DropdownMenu.show {
-  display: flex;
-}
-
 /* Media Query for Mobile */
 @media (max-width: 768px) {
+  .potrait {
+    display: none;
+  }
   .Sidebar {
     position: fixed; 
     top: 0;
@@ -178,7 +139,33 @@
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
-    padding: 10px;
+  }
+
+  .menu {
+    /* position: relative; */
+    left: 0;
+    width: 100%;
+    /* display: block; */
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 11px;
+    z-index: 3;
+  }
+
+  .SidebarList {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 13px;
+    border-radius: 10px;
+    background: rgb(25, 55, 109);
+    background: linear-gradient(
+      0deg,
+      rgba(25, 55, 109, 0.2) 0%,
+      rgba(25, 55, 109, 1) 100%
+    );
+    padding: 24px 33px;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
   }
 
   .MenuButton {
@@ -186,4 +173,19 @@
     cursor: pointer;
   }
 
+  .SidebarList.menuOpen {
+    display: flex;
+    z-index: 1;
+    position: absolute;
+  }
+
+  .contact-container{
+    margin: 0;
+    position: none;
+    right: 0;
+    width: auto;
+  }
+  .contact-text {
+    display: none;
+  }
 }

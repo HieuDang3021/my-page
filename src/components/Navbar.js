@@ -20,25 +20,29 @@ function Navbar() {
         <p className="SidebarText">Full-stack developer</p>
       </div>
       
-      <ul className='SidebarList'>
+      <div className='menu'>
         <button className="MenuButton" onClick={toggleMenu}>
           ☰
         </button>
-        {SidebarData.pagelink.map((val, key) => {
-            return (
-                <li 
-                  key={key} 
-                  className='row'
-                  id={window.location.pathname === val.link ? "active" : ""}
-                  onClick={() => {window.location.pathname = val.link}}
-                >
-                    <div id='icon'>{val.icon}</div><div id='title'>{val.title}</div>
-                </li>
-            );
-        })}
-      </ul>
-
-      <div className="contact-container">
+        <ul 
+        // className="SidebarList"
+          className={`SidebarList ${isOpen && "menuOpen"}`}
+          onClick={() => setIsOpen(false)}
+        >
+          {SidebarData.pagelink.map((val, key) => {
+              return (
+                  <li 
+                    key={key} 
+                    className='row'
+                    id={window.location.pathname === val.link ? "active" : ""}
+                    onClick={() => {window.location.pathname = val.link}}
+                  >
+                      <div id='icon'>{val.icon}</div><div id='title'>{val.title}</div>
+                  </li>
+              );
+          })}
+        </ul>
+        <div className="contact-container">
         <p className='contact-text'>Contact me</p>
           <div className="contact-icons">
           {SidebarData.contactme.map((val, key) => {
@@ -49,7 +53,9 @@ function Navbar() {
               );
           })}
           </div>
+        </div>
       </div>
+      
     </div>
 
   </div>
