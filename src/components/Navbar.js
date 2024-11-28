@@ -1,29 +1,53 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './navbar.css'
-import {SidebarData} from './SidebarData'
+import {SidebarData} from '../data/SidebarData'
 import potrait from "../assets/images/potrait-image-example.jpg"
 
 function Navbar() {
 
   const [isOpen, setIsOpen] = useState(false);
 
+  const [isHidden, setIsHidden] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(window.scrollY);
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   }
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        setIsHidden(true); // Hide navbar when scrolling down
+        
+      } else {
+        setIsHidden(false); // Show navbar when scrolling up
+      }
+
+      setLastScrollY(currentScrollY); // Update the last scroll position
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll); // Cleanup event listener on unmount
+    };
+  }, [lastScrollY]);
+
   return (
     <div className="Navbar">
     <div className='Sidebar'>
-      <div className='person'>
+      <div className={`person ${isHidden ? 'hidden' : ''}`}>
         <img className='potrait' src={potrait} alt="Potrait" />
-        <p className="SidebarText">Hieu Trung Dang</p>
-        <p className="SidebarText">Full-stack developer</p>
+        <p className="SidebarText name">Hieu Trung Dang</p>
+        <p className="SidebarText title">Full-stack developer</p>
       </div>
       
       <div className='menu'>
-        <button className="MenuButton" onClick={toggleMenu}>
+        <a className="MenuButton" onClick={toggleMenu}>
           ☰
-        </button>
+        </a>
         <ul 
         // className="SidebarList"
           className={`SidebarList ${isOpen && "menuOpen"}`}

@@ -35,8 +35,16 @@
     text-align: center; /* Centers the text */
     font-family: 'Trebuchet MS', 'Arial', sans-serif; /* Use a readable font */
     margin: 10px 0; /* Add spacing around the text */
-    font-size: 30px; /* Adjust text size */
+    font-size: 25px; /* Adjust text size */
   }
+
+  .SidebarText.name{
+  font-weight: bold;
+}
+
+.SidebarText.title{
+  font-weight: lighter;
+}
 
 .SidebarList {
     position: relative;
@@ -128,28 +136,39 @@
   }
   .Sidebar {
     position: fixed; 
-    top: 0;
-    left: 0;
+    /* top: 50px; */
     height: auto;
     width: 100%;
     display: flex;
     background-color: #373F51;
     color: #fff;
-    display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
+    border-radius: 0;
+
   }
 
+  .person {
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+
+  .person.hidden {
+    transform: translateY(-100%); /* Slide out */
+    display: none;
+  }
+
+
   .menu {
-    /* position: relative; */
-    left: 0;
     width: 100%;
-    /* display: block; */
+    height: 30px;
     flex-direction: column;
     align-items: flex-end;
-    gap: 11px;
+    gap: 1px;
     z-index: 3;
+    border: #fff;
+    border-width: 50px;
+    padding-top: 10px;
   }
 
   .SidebarList {
@@ -157,20 +176,17 @@
     flex-direction: column;
     align-items: center;
     gap: 13px;
-    border-radius: 10px;
-    background: rgb(25, 55, 109);
-    background: linear-gradient(
-      0deg,
-      rgba(25, 55, 109, 0.2) 0%,
-      rgba(25, 55, 109, 1) 100%
-    );
-    padding: 24px 33px;
+    background: #373F51;
+    padding: 0;
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+    margin: 0;
+
   }
 
   .MenuButton {
     display: block;
     cursor: pointer;
+    margin-left: 10px;
   }
 
   .SidebarList.menuOpen {
@@ -180,11 +196,17 @@
   }
 
   .contact-container{
-    margin: 0;
+    margin: 0 10px 0 0;
     position: none;
     right: 0;
     width: auto;
+    height: 23px;
   }
+
+  .contact-icons{
+    margin: 0;
+  }
+
   .contact-text {
     display: none;
   }
