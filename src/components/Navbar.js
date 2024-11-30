@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react'
-import './navbar.css'
-import {SidebarData} from '../data/SidebarData'
+import '../style_sheet/navbar.css'
+import {NavbarData} from '../data/NavbarData'
 import potrait from "../assets/images/potrait-image-example.jpg"
+import { useNavigate } from 'react-router-dom';
 
 function Navbar() {
-
-  const [isOpen, setIsOpen] = useState(false);
-
-  const [isHidden, setIsHidden] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(window.scrollY);
+  /*Navbar menu*/
+  const [isOpen, setIsOpen] = useState(false); //state to check open or close navbar menu
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   }
+
+  /*hide navbar info*/
+  const [isHidden, setIsHidden] = useState(false); // hidden state
+  const [lastScrollY, setLastScrollY] = useState(window.scrollY); // check for window scroll
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,8 +37,14 @@ function Navbar() {
     };
   }, [lastScrollY]);
 
+  /* navigate app */
+  const navigate = useNavigate();
+
+  const handleListSelect = (page) => {
+    navigate(page);
+  }
+
   return (
-    <div className="Navbar">
     <div className='Sidebar'>
       <div className={`person ${isHidden ? 'hidden' : ''}`}>
         <img className='potrait' src={potrait} alt="Potrait" />
@@ -45,21 +53,20 @@ function Navbar() {
       </div>
       
       <div className='menu'>
-        <a className="MenuButton" onClick={toggleMenu}>
+        <button className="MenuButton" onClick={toggleMenu}>
           ☰
-        </a>
+        </button>
         <ul 
-        // className="SidebarList"
           className={`SidebarList ${isOpen && "menuOpen"}`}
           onClick={() => setIsOpen(false)}
         >
-          {SidebarData.pagelink.map((val, key) => {
+          {NavbarData.pagelink.map((val, key) => {
               return (
                   <li 
                     key={key} 
                     className='row'
                     id={window.location.pathname === val.link ? "active" : ""}
-                    onClick={() => {window.location.pathname = val.link}}
+                    onClick={() => handleListSelect(val.link)}
                   >
                       <div id='icon'>{val.icon}</div><div id='title'>{val.title}</div>
                   </li>
@@ -67,9 +74,9 @@ function Navbar() {
           })}
         </ul>
         <div className="contact-container">
-        <p className='contact-text'>Contact me</p>
+        <p className='contact-text'>Get in touch</p>
           <div className="contact-icons">
-          {SidebarData.contactme.map((val, key) => {
+          {NavbarData.contactme.map((val, key) => {
               return (
                   <a key={key} href={val.link} target="blank" rel="noopener noreferrer" alt={val.title} >
                   {val.icon}
@@ -82,7 +89,6 @@ function Navbar() {
       
     </div>
 
-  </div>
   )
 }
 

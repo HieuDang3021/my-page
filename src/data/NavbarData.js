@@ -1,19 +1,20 @@
 import React from 'react'
-import HomeIcon from '@mui/icons-material/Home';
 import TerminalIcon from '@mui/icons-material/Terminal';
 import PersonIcon from '@mui/icons-material/Person';
+import ContactsIcon from '@mui/icons-material/Contacts';
 
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
-export const SidebarData = {
+export const NavbarData = {
     portrait_image: "../assets/images/potrait-image-example.jpg",
     pagelink: 
-    [    {
-            title:"Home",
-            icon: <HomeIcon/>,
-            link: "/home"
+    [    
+        {
+            title:"About",
+            icon: <PersonIcon/>,
+            link: "/about"
         },
         {
             title:"Projects",
@@ -21,9 +22,9 @@ export const SidebarData = {
             link: "/projects"
         },
         {
-            title:"About",
-            icon: <PersonIcon/>,
-            link: "/about"
+            title:"Contact me",
+            icon: <ContactsIcon/>,
+            link: "/contact"
         },
     ],
     contactme:
