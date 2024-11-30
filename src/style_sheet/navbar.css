@@ -1,10 +1,5 @@
-.navbar {
-  display: flex;
-  flex-direction: column;
-}
-
 /* Side bar for pc monitor */
-.Sidebar {
+.navbar {
   z-index: 1000;
   position: fixed; 
   top: 0;
@@ -31,30 +26,30 @@
   display: none;
 }
 
-.SidebarText {
-    color: #fff; /* Matches sidebar theme */
+.navbarText {
+    color: #fff; /* Matches navbar theme */
     text-align: center; /* Centers the text */
     font-family: 'Trebuchet MS', 'Arial', sans-serif; /* Use a readable font */
     margin: 10px 0; /* Add spacing around the text */
     font-size: 25px; /* Adjust text size */
   }
 
-  .SidebarText.name{
+  .navbarText.name{
   font-weight: bold;
 }
 
-.SidebarText.title{
+.navbarText.title{
   font-weight: lighter;
 }
 
-.SidebarList {
+.navbarList {
     position: relative;
     height: auto;
     padding: 0;
     width: 100%;
 }
 
-.SidebarList .row {
+.navbarList .row {
     width: 100%;
     height: 60px;
     list-style-type: none;
@@ -70,12 +65,12 @@
     transition: background-color 0.3s ease; /* Smooth hover effect */
 }
 
-.SidebarList .row:hover {
+.navbarList .row:hover {
     cursor: pointer;
     background-color: #495061;
 }
 
-.SidebarList #active {
+.navbarList #active {
     background-color: #495061;
     font-weight: bold;
     color: #fff;
@@ -98,9 +93,9 @@
 
 .contact-container {
     margin: 20px 0 10px 30px;
-    position: absolute; /* Position it relative to the Sidebar container */
-    bottom: 10px; /* Distance from the bottom of the Sidebar */
-    width: 100%; /* Ensure it spans the full width of the Sidebar */
+    position: absolute; /* Position it relative to the navbar container */
+    bottom: 10px; /* Distance from the bottom of the navbar */
+    width: auto; /* Ensure it spans the full width of the navbar */
     align-items: center;
 
   }
@@ -108,19 +103,19 @@
   .contact-container p {
     font-size: 18px;
     font-family: 'Trebuchet MS', Arial, sans-serif;
-    color: #A9BCD0; /* Match sidebar theme */
+    color: #A9BCD0; /* Match navbar theme */
     margin: 10px 0;
   }
   
   .contact-icons {
     display: flex;
     justify-content: start; /* Align icons horizontally */
-    gap: 15px; /* Space between icons */
+    gap: 10px; /* Space between icons */
     margin-top: 10px;
   }
   
   .contact-icons a {
-    color: #A9BCD0; /* Ensure icons match the sidebar theme */
+    color: #A9BCD0; /* Ensure icons match the navbar theme */
     font-size: 24px; /* Adjust size of icons */
     text-decoration: none; /* Remove underline on links */
     transition: color 0.3s ease; /* Add a hover effect */
@@ -135,9 +130,8 @@
   .potrait {
     display: none;
   }
-  .Sidebar {
-    position: sticky; 
-    /* top: 50px; */
+  .navbar {
+    position: fixed; 
     height: auto;
     width: 100%;
     display: flex;
@@ -167,12 +161,12 @@
     align-items: flex-end;
     gap: 1px;
     z-index: 3;
-    border: #fff;
-    border-width: 50px;
+    /* border: #fff; */
+    border-top: 1px solid #495061;
     padding-top: 10px;
   }
 
-  .SidebarList {
+  .navbarList {
     display: none;
     flex-direction: column;
     align-items: center;
@@ -193,7 +187,7 @@
     color: #fff;
   }
 
-  .SidebarList.menuOpen {
+  .navbarList.menuOpen {
     display: flex;
     z-index: 1;
     position: absolute;

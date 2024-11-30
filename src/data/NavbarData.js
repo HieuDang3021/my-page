@@ -3,6 +3,7 @@ import TerminalIcon from '@mui/icons-material/Terminal';
 import PersonIcon from '@mui/icons-material/Person';
 import ContactsIcon from '@mui/icons-material/Contacts';
 
+import EmailIcon from '@mui/icons-material/Email';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -29,6 +30,11 @@ export const NavbarData = {
     ],
     contactme:
     [
+        {
+            title:"Email",
+            icon : <EmailIcon/>,
+            link: "mailto:trhieu1247@gmail.com"
+        },
         {
             title:"Linkedin",
             icon: <LinkedInIcon/>,

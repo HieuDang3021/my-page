@@ -45,11 +45,11 @@ function Navbar() {
   }
 
   return (
-    <div className='Sidebar'>
+    <div className='navbar'>
       <div className={`person ${isHidden ? 'hidden' : ''}`}>
         <img className='potrait' src={potrait} alt="Potrait" />
-        <p className="SidebarText name">Hieu Trung Dang</p>
-        <p className="SidebarText title">Full-stack developer</p>
+        <p className="navbarText name">Hieu Trung Dang</p>
+        <p className="navbarText title">Full-stack developer</p>
       </div>
       
       <div className='menu'>
@@ -57,7 +57,7 @@ function Navbar() {
           ☰
         </button>
         <ul 
-          className={`SidebarList ${isOpen && "menuOpen"}`}
+          className={`navbarList ${isOpen && "menuOpen"}`}
           onClick={() => setIsOpen(false)}
         >
           {NavbarData.pagelink.map((val, key) => {
