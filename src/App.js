@@ -11,8 +11,8 @@ function App() {
         <main role='main'>
           <div className='main-content-container'>
             <Routes>
-              <Route path='/' element={<About/>} />
               <Route path='/about' element={<About/>} />
+              <Route path='/my-page' element={<About/>} />
             </Routes>
           </div>
         </main>
