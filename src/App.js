@@ -1,6 +1,6 @@
 import './App.css';
-import About from './components/About';
 import Navbar from './components/Navbar';
+import Main_page from './pages/Main_page';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -11,8 +11,7 @@ function App() {
         <main role='main'>
           <div className='main-content-container'>
             <Routes>
-              <Route path='/about' element={<About/>} />
-              <Route path='/my-page' element={<About/>} />
+              <Route path='/my-page' element={<Main_page/>} />
             </Routes>
           </div>
         </main>

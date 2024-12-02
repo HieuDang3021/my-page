@@ -15,17 +15,17 @@ export const NavbarData = {
         {
             title:"About",
             icon: <PersonIcon/>,
-            link: "/about"
+            link: "#about"
         },
         {
             title:"Projects",
             icon: <TerminalIcon/>,
-            link: "/projects"
+            link: "#projects"
         },
         {
             title:"Contact me",
             icon: <ContactsIcon/>,
-            link: "/contact"
+            link: "#contact"
         },
     ],
     contactme:

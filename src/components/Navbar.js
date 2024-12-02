@@ -67,8 +67,9 @@ function Navbar() {
                     className='row'
                     id={window.location.pathname === val.link ? "active" : ""}
                     onClick={() => handleListSelect(val.link)}
+                    // href={val.link}
                   >
-                      <div id='icon'>{val.icon}</div><div id='title'>{val.title}</div>
+                      <a href={val.link} id='icon'>{val.icon}</a><a href={val.link} id='title'>{val.title}</a>
                   </li>
               );
           })}
