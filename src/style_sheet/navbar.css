@@ -63,6 +63,7 @@
     font-weight: bold;
     font-size: 20px;
     transition: background-color 0.3s ease; /* Smooth hover effect */
+    text-decoration: none;
 }
 
 .navbarList .row:hover {

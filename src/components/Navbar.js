@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import '../style_sheet/navbar.css'
 import {NavbarData} from '../data/NavbarData'
 import potrait from "../assets/images/potrait-image-example.jpg"
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 function Navbar() {
   /*Navbar menu*/
@@ -38,11 +38,11 @@ function Navbar() {
   }, [lastScrollY]);
 
   /* navigate app */
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const handleListSelect = (page) => {
-    navigate(page);
-  }
+  // const handleListSelect = (page) => {
+  //   navigate(page);
+  // }
 
   return (
     <div className='navbar'>
@@ -62,15 +62,14 @@ function Navbar() {
         >
           {NavbarData.pagelink.map((val, key) => {
               return (
-                  <li 
+                  <a 
                     key={key} 
                     className='row'
                     id={window.location.pathname === val.link ? "active" : ""}
-                    onClick={() => handleListSelect(val.link)}
-                    // href={val.link}
+                    href={val.link}
                   >
-                      <a href={val.link} id='icon'>{val.icon}</a><a href={val.link} id='title'>{val.title}</a>
-                  </li>
+                      <div href={val.link} id='icon'>{val.icon}</div><div href={val.link} id='title'>{val.title}</div>
+                  </a>
               );
           })}
         </ul>

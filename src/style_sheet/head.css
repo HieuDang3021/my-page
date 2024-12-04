@@ -15,6 +15,7 @@
     align-items: flex-start;
     color: var(--color-text);
     z-index: 1;
+    margin-left: 10px;
   }
   
   .head-title {
@@ -46,7 +47,7 @@
   }
   
   .head-img {
-    width: 40%;
+    width: 30%;
     z-index: 1;
     border-radius: 50%;
     animation-name: floating;
